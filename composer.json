@@ -8,10 +8,10 @@
         }
     ],
     "require": {
-      "php": ">=5.5.9",
-      "illuminate/database": ">=5.2.0"
+      "php": ">=5.5.9"
     },
     "require-dev": {
-        "crysalead/kahlan": "^2.4"
+        "crysalead/kahlan": "^2.4",
+        "illuminate/database": ">=5.2.0"
     }
 }
