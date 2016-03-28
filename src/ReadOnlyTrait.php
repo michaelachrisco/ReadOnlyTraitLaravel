@@ -1,5 +1,5 @@
 <?php
-namespace Michael\ReadOnly;
+namespace MichaelAChrisco\ReadOnly;
 trait ReadOnlyTrait {
   public function save(array $options = []){
     return false;

@@ -1,9 +1,9 @@
 <?php
 require_once('src/ReadOnlyTrait.php');
-// use Michael\ReadOnlyTrait;
+// use MichaelAChrisco\ReadOnlyTrait;
 use Illuminate\Database\Eloquent\Model;
 class User extends Illuminate\Database\Eloquent\Model {
-  use Michael\ReadOnly\ReadOnlyTrait;
+  use MichaelAChrisco\ReadOnly\ReadOnlyTrait;
 }
 
 describe("User", function() {

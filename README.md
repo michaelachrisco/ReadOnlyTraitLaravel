@@ -8,10 +8,10 @@ This is only a simple demonstration of the model.
 ```php
 <?php
 require_once('src/ReadOnlyTrait.php'); //Or register under your config/App.php
-// use Michael\ReadOnlyTrait;          //optional
+// use MichaelAChrisco\ReadOnlyTrait;          //optional
 use Illuminate\Database\Eloquent\Model;
 class User extends Illuminate\Database\Eloquent\Model {
-  use Michael\ReadOnly\ReadOnlyTrait;
+  use MichaelAChrisco\ReadOnly\ReadOnlyTrait;
 }
 
 $legacyUser = new User;
