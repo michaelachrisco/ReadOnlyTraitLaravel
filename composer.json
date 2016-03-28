@@ -1,0 +1,17 @@
+{
+    "name": "michael/readonly",
+    "description": "Readonly Models for Laravel 5",
+    "authors": [
+        {
+            "name": "Michael Chrisco",
+            "email": "michaelachrisco@gmail.com"
+        }
+    ],
+    "require": {
+      "php": ">=5.5.9",
+      "illuminate/database": ">=5.2.0"
+    },
+    "require-dev": {
+        "crysalead/kahlan": "^2.4"
+    }
+}
