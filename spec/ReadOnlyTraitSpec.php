@@ -7,6 +7,22 @@ class User extends Illuminate\Database\Eloquent\Model {
 }
 
 describe("User", function() {
+  describe("::create()", function(){
+
+    it("is expected to return false", function() {
+        $user = new User;
+        expect($user->create([]))->toBe(false);
+        unset($user);
+    });
+ });
+ describe("::forceCreate()", function(){
+
+   it("is expected to return false", function() {
+       $user = new User;
+       expect($user->forceCreate([]))->toBe(false);
+       unset($user);
+   });
+});
   describe("::save()", function(){
 
     it("is expected to return false", function() {
@@ -61,13 +77,6 @@ describe("User", function() {
     it("is expected to return false", function() {
         $user = new User;
         expect($user->forceDelete())->toBe(false);
-        unset($user);
-    });
-   });
-  describe("::test()", function(){
-    it("is expected to return false", function() {
-        $user = new User;
-        expect($user->test())->toBe(false);
         unset($user);
     });
    });
