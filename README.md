@@ -10,13 +10,51 @@ This is only a simple demonstration of the model.
 require_once('src/ReadOnlyTrait.php'); //Or register under your config/App.php
 // use MichaelAChrisco\ReadOnlyTrait;          //optional
 use Illuminate\Database\Eloquent\Model;
-class User extends Illuminate\Database\Eloquent\Model {
+class User extends Model {
   use MichaelAChrisco\ReadOnly\ReadOnlyTrait;
 }
 
 $legacyUser = new User;
 $legacyUser->set_user_name('bob');
+
 $result = $legacyUser->save();
 //User is not saved and $result is false.
  ?>
 ```
+
+## Methods that will return false:
+
+ * create
+ * forceCreate
+ * save
+ * update
+ * firstOrCreate
+ * firstOrNew
+ * delete
+ * destroy
+ * restore
+ * forceDelete
+
+## TODO:
+  * performDeleteOnModel
+  * push
+  * saveOrFail
+  * finishSave
+  * performUpdate
+  * performInsert(??)
+  * insertAndSetId(??)
+  * touch
+  * Add in a PR for any other methods you can find!
+
+
+### registerModelEvents( look into best way to implement)  
+  * saving
+  * saved
+  * updating
+  * updated
+  * creating
+  * created
+  * deleting
+  * deleted
+
+###
