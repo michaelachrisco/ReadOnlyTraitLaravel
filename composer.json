@@ -8,7 +8,7 @@
         }
     ],
     "autoload": {
-        "psr-4": {"MichaelAChrisco\\ReadOnly": "src/"}
+        "psr-4": {"MichaelAChrisco\\ReadOnly\\": "src/"}
     },
     "require": {
       "php": ">=5.5.9"
