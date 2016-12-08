@@ -8,7 +8,6 @@ class User extends Illuminate\Database\Eloquent\Model {
 
 describe("User", function() {
   describe("::create()", function(){
-
     it("is expected to return false", function() {
         $user = new User;
         expect($user->create([]))->toBe(false);
@@ -16,7 +15,6 @@ describe("User", function() {
     });
  });
  describe("::forceCreate()", function(){
-
    it("is expected to return false", function() {
        $user = new User;
        expect($user->forceCreate([]))->toBe(false);
@@ -30,7 +28,7 @@ describe("User", function() {
         expect($user->save([]))->toBe(false);
         unset($user);
     });
- });
+  });
   describe("::update()", function(){
     it("is expected to return false", function() {
         $user = new User;
@@ -80,6 +78,41 @@ describe("User", function() {
         unset($user);
     });
    });
+   describe("::performDeleteOnModel()", function(){
+     it("is expected to return false", function() {
+         $user = new User;
+         expect($user->performDeleteOnModel())->toBe(false);
+         unset($user);
+     });
+    });
+  describe("::push()", function(){
+    it("is expected to return false", function() {
+        $user = new User;
+        expect($user->push())->toBe(false);
+        unset($user);
+    });
+   });
+ describe("::finishSave()", function(){
+   it("is expected to return false", function() {
+       $user = new User;
+       expect($user->finishSave([]))->toBe(false);
+       unset($user);
+   });
+  });
+  describe("::performUpdate()", function(){
+    it("is expected to return false", function() {
+        $user = new User;
+        expect($user->performUpdate())->toBe(false);
+        unset($user);
+    });
+   });
+   describe("::touch()", function(){
+     it("is expected to return false", function() {
+         $user = new User;
+         expect($user->touch())->toBe(false);
+         unset($user);
+     });
+    });
 });
 
 
