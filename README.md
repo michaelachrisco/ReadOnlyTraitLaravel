@@ -34,16 +34,16 @@ $result = $legacyUser->save();
  * destroy
  * restore
  * forceDelete
+ * performDeleteOnModel
+ * push
+ * finishSave
+ * performUpdate
+ * touch
 
 ## TODO:
-  * performDeleteOnModel
-  * push
   * saveOrFail
-  * finishSave
-  * performUpdate
   * performInsert(??)
   * insertAndSetId(??)
-  * touch
   * Add in a PR for any other methods you can find!
 
 

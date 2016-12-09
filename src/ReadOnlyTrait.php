@@ -98,4 +98,49 @@ trait ReadOnlyTrait {
   public function forceDelete(){
     return false;
   }
+
+  /**
+   * returns false on performDeleteOnModel
+   * @method performDeleteOnModel
+   * @return false
+   */
+    public function performDeleteOnModel(){
+      return false;
+    }
+
+  /**
+   * returns false on push
+   * @method push
+   * @return false
+   */
+    public function push(){
+      return false;
+    }
+
+  /**
+   * returns false on finishSave
+   * @method finishSave
+   * @return false
+   */
+    public function finishSave(array $options){
+      return false;
+    }
+
+  /**
+   * returns false on performUpdate
+   * @method performUpdate
+   * @return false
+   */
+    public function performUpdate(){
+      return false;
+    }
+
+  /**
+   * returns false on touch
+   * @method touch
+   * @return false
+   */
+    public function touch(){
+      return false;
+    }
 }
