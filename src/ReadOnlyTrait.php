@@ -1,5 +1,7 @@
 <?php
 namespace MichaelAChrisco\ReadOnly;
+use Illuminate\Database\Eloquent\Builder;
+
 trait ReadOnlyTrait {
   /**
    * returns false on create
@@ -131,7 +133,7 @@ trait ReadOnlyTrait {
    * @method performUpdate
    * @return false
    */
-    public function performUpdate(){
+    public function performUpdate(Builder $query, array $options = []){
       return false;
     }
 
