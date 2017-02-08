@@ -1,17 +1,22 @@
-# Read Only Laravel 5 Models
-The Read only trait Monkey Patches Laravel models to not save, delete or modify models.
-Ideally, this would be used in addition to DB permissions to ensure Users and Developers cannot write to a Legacy system of some kind.
+# Laravel 5+ Read Only Models
+The read only trait removes the ability to save, delete or modify Laravel models.
+Ideally, this would be used in addition to DB permissions to ensure users and developers cannot write to a Legacy system.
 
-This is only a simple demonstration of the model.
+## Install
+
+```
+composer require michaelachrisco/readonly
+```
+
 ## To use:
+
+
 
 ```php
 <?php
-require_once('src/ReadOnlyTrait.php'); //Or register under your config/App.php
-// use MichaelAChrisco\ReadOnlyTrait;          //optional
 use Illuminate\Database\Eloquent\Model;
 class User extends Model {
-  use MichaelAChrisco\ReadOnly\ReadOnlyTrait;
+  use \MichaelAChrisco\ReadOnly\ReadOnlyTrait;
 }
 
 $legacyUser = new User;
