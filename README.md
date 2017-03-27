@@ -15,19 +15,20 @@ composer require michaelachrisco/readonly
 ```php
 <?php
 use Illuminate\Database\Eloquent\Model;
+use MichaelAChrisco\ReadOnly\ReadOnlyTrait;
 class User extends Model {
-  use \MichaelAChrisco\ReadOnly\ReadOnlyTrait;
+  use ReadOnlyTrait;
 }
 
 $legacyUser = new User;
 $legacyUser->set_user_name('bob');
 
 $result = $legacyUser->save();
-//User is not saved and $result is false.
+//User is not saved and ReadOnlyException is thrown.
  ?>
 ```
 
-## Methods that will return false:
+## Methods that will throw ReadOnlyExceptions:
 
  * create
  * forceCreate

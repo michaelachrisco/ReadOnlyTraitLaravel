@@ -1,148 +1,164 @@
 <?php
 namespace MichaelAChrisco\ReadOnly;
 use Illuminate\Database\Eloquent\Builder;
+use MichaelAChrisco\ReadOnly\ReadOnlyException;
 
 trait ReadOnlyTrait {
   /**
-   * returns false on create
+   * throws ReadOnlyException on create
    * @method create
    * @param  array $attributes
-   * @return false
+   *
    */
   static function create(array $attributes = []){
-    return false;
+    $class = get_called_class();
+    throw new ReadOnlyException("Not allowed to persist changes in read-only model {$class}");
   }
 
 /**
- * returns false on forceCreate
+ * throws ReadOnlyException on forceCreate
  * @method forceCreate
  * @param  array       $attributes
- * @return false
+ *
  */
   static function forceCreate(array $attributes){
-    return false;
+    $class = get_called_class();
+    throw new ReadOnlyException("Not allowed to persist changes in read-only model {$class}");
   }
 
   /**
-   * returns false on save
+   * throws ReadOnlyException on save
    * @method save
    * @param  array $options
-   * @return false
+   *
    */
   public function save(array $options = []){
-    return false;
+    $class = get_called_class();
+    throw new ReadOnlyException("Not allowed to persist changes in read-only model {$class}");
   }
 
 /**
- * returns false on update
+ * throws ReadOnlyException on update
  * @method update
  * @param  [type] $attributes
- * @param  [type] $options
- * @return false
+ * @param   $options
+ *
  */
   public function update(array $attributes = [], array $options = []){
-    return false;
+    $class = get_called_class();
+    throw new ReadOnlyException("Not allowed to persist changes in read-only model {$class}");
   }
 
 /**
- * returns false on firstOrCreate
+ * throws ReadOnlyException on firstOrCreate
  * @method firstOrCreate
  * @param  array         $arr
- * @return false
+ *
  */
   static function firstOrCreate(array $arr){
-    return false;
+    $class = get_called_class();
+    throw new ReadOnlyException("Not allowed to persist changes in read-only model {$class}");
   }
 
 /**
- * returns false on firstOrNew
+ * throws ReadOnlyException on firstOrNew
  * @method firstOrNew
  * @param  array      $arr
- * @return false
+ *
  */
   static function firstOrNew(array $arr){
-    return false;
+    $class = get_called_class();
+    throw new ReadOnlyException("Not allowed to persist changes in read-only model {$class}");
   }
 
 /**
- * returns false on delete
+ * throws ReadOnlyException on delete
  * @method delete
- * @return false
+ *
  */
   public function delete(){
-    return false;
+    $class = get_called_class();
+    throw new ReadOnlyException("Not allowed to persist changes in read-only model {$class}");
   }
 
 /**
- * returns false on destroy
+ * throws ReadOnlyException on destroy
  * @method destroy
  * @param  mixed  $ids
- * @return false
+ *
  */
   static function destroy($ids){
-    return false;
+    $class = get_called_class();
+    throw new ReadOnlyException("Not allowed to persist changes in read-only model {$class}");
   }
 
 /**
- * returns false on restore
+ * throws ReadOnlyException on restore
  * @method restore
- * @return false
+ *
  */
   public function restore(){
-    return false;
+    $class = get_called_class();
+    throw new ReadOnlyException("Not allowed to persist changes in read-only model {$class}");
   }
 
 /**
- * returns false on forceDelete
+ * throws ReadOnlyException on forceDelete
  * @method forceDelete
- * @return false
+ *
  */
   public function forceDelete(){
-    return false;
+    $class = get_called_class();
+    throw new ReadOnlyException("Not allowed to persist changes in read-only model {$class}");
   }
 
   /**
-   * returns false on performDeleteOnModel
+   * throws ReadOnlyException on performDeleteOnModel
    * @method performDeleteOnModel
-   * @return false
+   *
    */
     public function performDeleteOnModel(){
-      return false;
+      $class = get_called_class();
+      throw new ReadOnlyException("Not allowed to persist changes in read-only model {$class}");
     }
 
   /**
-   * returns false on push
+   * throws ReadOnlyException on push
    * @method push
-   * @return false
+   *
    */
     public function push(){
-      return false;
+      $class = get_called_class();
+      throw new ReadOnlyException("Not allowed to persist changes in read-only model {$class}");
     }
 
   /**
-   * returns false on finishSave
+   * throws ReadOnlyException on finishSave
    * @method finishSave
-   * @return false
+   *
    */
     public function finishSave(array $options){
-      return false;
+      $class = get_called_class();
+      throw new ReadOnlyException("Not allowed to persist changes in read-only model {$class}");
     }
 
   /**
-   * returns false on performUpdate
+   * throws ReadOnlyException on performUpdate
    * @method performUpdate
-   * @return false
+   *
    */
     public function performUpdate(Builder $query, array $options = []){
-      return false;
+      $class = get_called_class();
+      throw new ReadOnlyException("Not allowed to persist changes in read-only model {$class}");
     }
 
   /**
-   * returns false on touch
+   * throws ReadOnlyException on touch
    * @method touch
-   * @return false
+   *
    */
     public function touch(){
-      return false;
+      $class = get_called_class();
+      throw new ReadOnlyException("Not allowed to persist changes in read-only model {$class}");
     }
 }
