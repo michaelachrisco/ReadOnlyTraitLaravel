@@ -45,6 +45,8 @@ $result = $legacyUser->save();
  * finishSave
  * performUpdate
  * touch
+ * insert
+ * truncate
 
 ## TODO:
   * saveOrFail

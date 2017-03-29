@@ -161,4 +161,24 @@ trait ReadOnlyTrait {
       $class = get_called_class();
       throw new ReadOnlyException("Not allowed to persist changes in read-only model {$class}");
     }
+  
+   /**
+   * throws ReadOnlyException on insert
+   * @method insert
+   *
+   */
+    public function insert(){
+      $class = get_called_class();
+      throw new ReadOnlyException("Not allowed to persist changes in read-only model {$class}");
+    }
+    
+    /**
+   * throws ReadOnlyException on truncate
+   * @method truncate
+   *
+   */
+    public function truncate(){
+      $class = get_called_class();
+      throw new ReadOnlyException("Not allowed to persist changes in read-only model {$class}");
+    }
 }
