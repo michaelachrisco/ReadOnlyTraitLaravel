@@ -145,6 +145,24 @@ describe("User", function() {
          })->toThrow(new ReadOnlyException("Not allowed to persist changes in read-only model User"));
       });
     });
+   describe("::truncate()", function(){
+     it("is expected to throw Error", function() {
+       expect(
+         function(){
+           $user = new User;
+           $user->truncate();
+         })->toThrow(new ReadOnlyException("Not allowed to persist changes in read-only model User"));
+      });
+    });
+   describe("::insert()", function(){
+     it("is expected to throw Error", function() {
+       expect(
+         function(){
+           $user = new User;
+           $user->insert();
+         })->toThrow(new ReadOnlyException("Not allowed to persist changes in read-only model User"));
+      });
+    });
 });
 
 
