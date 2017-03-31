@@ -2,6 +2,4 @@
 namespace MichaelAChrisco\ReadOnly;
 use RuntimeException;
 
-class ReadOnlyException extends RuntimeException{
-
-}
+class ReadOnlyException extends RuntimeException{}
