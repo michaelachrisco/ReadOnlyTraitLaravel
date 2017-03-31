@@ -1,18 +1,25 @@
 <?php
 namespace MichaelAChrisco\ReadOnly;
+
 use Illuminate\Database\Eloquent\Builder;
 use MichaelAChrisco\ReadOnly\ReadOnlyException;
 
-trait ReadOnlyTrait {
+trait ReadOnlyTrait
+{
+    public static function readOnly($class)
+    {
+        throw new ReadOnlyException("Not allowed to persist changes in read-only model {$class}");
+    }
+
   /**
    * throws ReadOnlyException on create
    * @method create
    * @param  array $attributes
    *
    */
-  static function create(array $attributes = []){
-    $class = get_called_class();
-    throw new ReadOnlyException("Not allowed to persist changes in read-only model {$class}");
+  public static function create(array $attributes = [])
+  {
+      ReadOnlyTrait::readOnly(get_called_class());
   }
 
 /**
@@ -21,9 +28,9 @@ trait ReadOnlyTrait {
  * @param  array       $attributes
  *
  */
-  static function forceCreate(array $attributes){
-    $class = get_called_class();
-    throw new ReadOnlyException("Not allowed to persist changes in read-only model {$class}");
+  public static function forceCreate(array $attributes)
+  {
+      ReadOnlyTrait::readOnly(get_called_class());
   }
 
   /**
@@ -32,9 +39,9 @@ trait ReadOnlyTrait {
    * @param  array $options
    *
    */
-  public function save(array $options = []){
-    $class = get_called_class();
-    throw new ReadOnlyException("Not allowed to persist changes in read-only model {$class}");
+  public function save(array $options = [])
+  {
+      ReadOnlyTrait::readOnly(get_called_class());
   }
 
 /**
@@ -44,9 +51,9 @@ trait ReadOnlyTrait {
  * @param   $options
  *
  */
-  public function update(array $attributes = [], array $options = []){
-    $class = get_called_class();
-    throw new ReadOnlyException("Not allowed to persist changes in read-only model {$class}");
+  public function update(array $attributes = [], array $options = [])
+  {
+      ReadOnlyTrait::readOnly(get_called_class());
   }
 
 /**
@@ -55,9 +62,9 @@ trait ReadOnlyTrait {
  * @param  array         $arr
  *
  */
-  static function firstOrCreate(array $arr){
-    $class = get_called_class();
-    throw new ReadOnlyException("Not allowed to persist changes in read-only model {$class}");
+  public static function firstOrCreate(array $arr)
+  {
+      ReadOnlyTrait::readOnly(get_called_class());
   }
 
 /**
@@ -66,9 +73,9 @@ trait ReadOnlyTrait {
  * @param  array      $arr
  *
  */
-  static function firstOrNew(array $arr){
-    $class = get_called_class();
-    throw new ReadOnlyException("Not allowed to persist changes in read-only model {$class}");
+  public static function firstOrNew(array $arr)
+  {
+      ReadOnlyTrait::readOnly(get_called_class());
   }
 
 /**
@@ -76,9 +83,9 @@ trait ReadOnlyTrait {
  * @method delete
  *
  */
-  public function delete(){
-    $class = get_called_class();
-    throw new ReadOnlyException("Not allowed to persist changes in read-only model {$class}");
+  public function delete()
+  {
+      ReadOnlyTrait::readOnly(get_called_class());
   }
 
 /**
@@ -87,9 +94,9 @@ trait ReadOnlyTrait {
  * @param  mixed  $ids
  *
  */
-  static function destroy($ids){
-    $class = get_called_class();
-    throw new ReadOnlyException("Not allowed to persist changes in read-only model {$class}");
+  public static function destroy($ids)
+  {
+      ReadOnlyTrait::readOnly(get_called_class());
   }
 
 /**
@@ -97,9 +104,9 @@ trait ReadOnlyTrait {
  * @method restore
  *
  */
-  public function restore(){
-    $class = get_called_class();
-    throw new ReadOnlyException("Not allowed to persist changes in read-only model {$class}");
+  public function restore()
+  {
+      ReadOnlyTrait::readOnly(get_called_class());
   }
 
 /**
@@ -107,9 +114,9 @@ trait ReadOnlyTrait {
  * @method forceDelete
  *
  */
-  public function forceDelete(){
-    $class = get_called_class();
-    throw new ReadOnlyException("Not allowed to persist changes in read-only model {$class}");
+  public function forceDelete()
+  {
+      ReadOnlyTrait::readOnly(get_called_class());
   }
 
   /**
@@ -117,9 +124,9 @@ trait ReadOnlyTrait {
    * @method performDeleteOnModel
    *
    */
-    public function performDeleteOnModel(){
-      $class = get_called_class();
-      throw new ReadOnlyException("Not allowed to persist changes in read-only model {$class}");
+    public function performDeleteOnModel()
+    {
+        ReadOnlyTrait::readOnly(get_called_class());
     }
 
   /**
@@ -127,9 +134,9 @@ trait ReadOnlyTrait {
    * @method push
    *
    */
-    public function push(){
-      $class = get_called_class();
-      throw new ReadOnlyException("Not allowed to persist changes in read-only model {$class}");
+    public function push()
+    {
+        ReadOnlyTrait::readOnly(get_called_class());
     }
 
   /**
@@ -137,9 +144,9 @@ trait ReadOnlyTrait {
    * @method finishSave
    *
    */
-    public function finishSave(array $options){
-      $class = get_called_class();
-      throw new ReadOnlyException("Not allowed to persist changes in read-only model {$class}");
+    public function finishSave(array $options)
+    {
+        ReadOnlyTrait::readOnly(get_called_class());
     }
 
   /**
@@ -147,9 +154,9 @@ trait ReadOnlyTrait {
    * @method performUpdate
    *
    */
-    public function performUpdate(Builder $query, array $options = []){
-      $class = get_called_class();
-      throw new ReadOnlyException("Not allowed to persist changes in read-only model {$class}");
+    public function performUpdate(Builder $query, array $options = [])
+    {
+        ReadOnlyTrait::readOnly(get_called_class());
     }
 
   /**
@@ -157,28 +164,28 @@ trait ReadOnlyTrait {
    * @method touch
    *
    */
-    public function touch(){
-      $class = get_called_class();
-      throw new ReadOnlyException("Not allowed to persist changes in read-only model {$class}");
+    public function touch()
+    {
+        ReadOnlyTrait::readOnly(get_called_class());
     }
-  
+
    /**
    * throws ReadOnlyException on insert
    * @method insert
    *
    */
-    public function insert(){
-      $class = get_called_class();
-      throw new ReadOnlyException("Not allowed to persist changes in read-only model {$class}");
+    public function insert()
+    {
+        ReadOnlyTrait::readOnly(get_called_class());
     }
-    
+
     /**
    * throws ReadOnlyException on truncate
    * @method truncate
    *
    */
-    public function truncate(){
-      $class = get_called_class();
-      throw new ReadOnlyException("Not allowed to persist changes in read-only model {$class}");
+    public function truncate()
+    {
+        ReadOnlyTrait::readOnly(get_called_class());
     }
 }
