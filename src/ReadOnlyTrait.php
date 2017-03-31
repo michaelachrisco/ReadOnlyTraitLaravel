@@ -1,13 +1,15 @@
 <?php
 namespace MichaelAChrisco\ReadOnly;
+
 use Illuminate\Database\Eloquent\Builder;
 use MichaelAChrisco\ReadOnly\ReadOnlyException;
 
-trait ReadOnlyTrait {
-
-  static function readOnly($class){
-    throw new ReadOnlyException("Not allowed to persist changes in read-only model {$class}");
-  }
+trait ReadOnlyTrait
+{
+    public static function readOnly($class)
+    {
+        throw new ReadOnlyException("Not allowed to persist changes in read-only model {$class}");
+    }
 
   /**
    * throws ReadOnlyException on create
@@ -15,8 +17,9 @@ trait ReadOnlyTrait {
    * @param  array $attributes
    *
    */
-  static function create(array $attributes = []){
-    ReadOnlyTrait::readOnly(get_called_class());
+  public static function create(array $attributes = [])
+  {
+      ReadOnlyTrait::readOnly(get_called_class());
   }
 
 /**
@@ -25,8 +28,9 @@ trait ReadOnlyTrait {
  * @param  array       $attributes
  *
  */
-  static function forceCreate(array $attributes){
-    ReadOnlyTrait::readOnly(get_called_class());
+  public static function forceCreate(array $attributes)
+  {
+      ReadOnlyTrait::readOnly(get_called_class());
   }
 
   /**
@@ -35,8 +39,9 @@ trait ReadOnlyTrait {
    * @param  array $options
    *
    */
-  public function save(array $options = []){
-    ReadOnlyTrait::readOnly(get_called_class());
+  public function save(array $options = [])
+  {
+      ReadOnlyTrait::readOnly(get_called_class());
   }
 
 /**
@@ -46,8 +51,9 @@ trait ReadOnlyTrait {
  * @param   $options
  *
  */
-  public function update(array $attributes = [], array $options = []){
-    ReadOnlyTrait::readOnly(get_called_class());
+  public function update(array $attributes = [], array $options = [])
+  {
+      ReadOnlyTrait::readOnly(get_called_class());
   }
 
 /**
@@ -56,8 +62,9 @@ trait ReadOnlyTrait {
  * @param  array         $arr
  *
  */
-  static function firstOrCreate(array $arr){
-    ReadOnlyTrait::readOnly(get_called_class());
+  public static function firstOrCreate(array $arr)
+  {
+      ReadOnlyTrait::readOnly(get_called_class());
   }
 
 /**
@@ -66,8 +73,9 @@ trait ReadOnlyTrait {
  * @param  array      $arr
  *
  */
-  static function firstOrNew(array $arr){
-    ReadOnlyTrait::readOnly(get_called_class());
+  public static function firstOrNew(array $arr)
+  {
+      ReadOnlyTrait::readOnly(get_called_class());
   }
 
 /**
@@ -75,8 +83,9 @@ trait ReadOnlyTrait {
  * @method delete
  *
  */
-  public function delete(){
-    ReadOnlyTrait::readOnly(get_called_class());
+  public function delete()
+  {
+      ReadOnlyTrait::readOnly(get_called_class());
   }
 
 /**
@@ -85,8 +94,9 @@ trait ReadOnlyTrait {
  * @param  mixed  $ids
  *
  */
-  static function destroy($ids){
-    ReadOnlyTrait::readOnly(get_called_class());
+  public static function destroy($ids)
+  {
+      ReadOnlyTrait::readOnly(get_called_class());
   }
 
 /**
@@ -94,8 +104,9 @@ trait ReadOnlyTrait {
  * @method restore
  *
  */
-  public function restore(){
-    ReadOnlyTrait::readOnly(get_called_class());
+  public function restore()
+  {
+      ReadOnlyTrait::readOnly(get_called_class());
   }
 
 /**
@@ -103,8 +114,9 @@ trait ReadOnlyTrait {
  * @method forceDelete
  *
  */
-  public function forceDelete(){
-    ReadOnlyTrait::readOnly(get_called_class());
+  public function forceDelete()
+  {
+      ReadOnlyTrait::readOnly(get_called_class());
   }
 
   /**
@@ -112,8 +124,9 @@ trait ReadOnlyTrait {
    * @method performDeleteOnModel
    *
    */
-    public function performDeleteOnModel(){
-      ReadOnlyTrait::readOnly(get_called_class());
+    public function performDeleteOnModel()
+    {
+        ReadOnlyTrait::readOnly(get_called_class());
     }
 
   /**
@@ -121,8 +134,9 @@ trait ReadOnlyTrait {
    * @method push
    *
    */
-    public function push(){
-      ReadOnlyTrait::readOnly(get_called_class());
+    public function push()
+    {
+        ReadOnlyTrait::readOnly(get_called_class());
     }
 
   /**
@@ -130,8 +144,9 @@ trait ReadOnlyTrait {
    * @method finishSave
    *
    */
-    public function finishSave(array $options){
-      ReadOnlyTrait::readOnly(get_called_class());
+    public function finishSave(array $options)
+    {
+        ReadOnlyTrait::readOnly(get_called_class());
     }
 
   /**
@@ -139,8 +154,9 @@ trait ReadOnlyTrait {
    * @method performUpdate
    *
    */
-    public function performUpdate(Builder $query, array $options = []){
-      ReadOnlyTrait::readOnly(get_called_class());
+    public function performUpdate(Builder $query, array $options = [])
+    {
+        ReadOnlyTrait::readOnly(get_called_class());
     }
 
   /**
@@ -148,8 +164,9 @@ trait ReadOnlyTrait {
    * @method touch
    *
    */
-    public function touch(){
-      ReadOnlyTrait::readOnly(get_called_class());
+    public function touch()
+    {
+        ReadOnlyTrait::readOnly(get_called_class());
     }
 
    /**
@@ -157,8 +174,9 @@ trait ReadOnlyTrait {
    * @method insert
    *
    */
-    public function insert(){
-      ReadOnlyTrait::readOnly(get_called_class());
+    public function insert()
+    {
+        ReadOnlyTrait::readOnly(get_called_class());
     }
 
     /**
@@ -166,7 +184,8 @@ trait ReadOnlyTrait {
    * @method truncate
    *
    */
-    public function truncate(){
-      ReadOnlyTrait::readOnly(get_called_class());
+    public function truncate()
+    {
+        ReadOnlyTrait::readOnly(get_called_class());
     }
 }

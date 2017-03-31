@@ -15,6 +15,7 @@
     },
     "require-dev": {
         "kahlan/kahlan": "^2.4",
-        "illuminate/database": ">=5.2.0"
+        "illuminate/database": ">=5.2.0",
+        "friendsofphp/php-cs-fixer": "^2.2"
     }
 }
