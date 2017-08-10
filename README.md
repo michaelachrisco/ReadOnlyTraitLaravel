@@ -55,7 +55,7 @@ $result = $legacyUser->save();
   * Add in a PR for any other methods you can find!
 
 
-### registerModelEvents( look into best way to implement)  
+### registerModelEvents (look into best way to implement)  
   * saving
   * saved
   * updating
