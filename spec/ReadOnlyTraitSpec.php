@@ -15,7 +15,7 @@ describe("User", function() {
         function(){
           $user = new User;
           $user->create([]);
-        })->toThrow(new ReadOnlyException('Calling [create] method on read-only model [User] is not allowed.'));
+        })->toThrow(new ReadOnlyException('create', 'User'));
     });
  });
  describe("::forceCreate()", function(){
@@ -24,7 +24,7 @@ describe("User", function() {
        $user = new User;
        $user->forceCreate([]);
      };
-     expect($closure)->toThrow(new ReadOnlyException('Calling [forceCreate] method on read-only model [User] is not allowed.'));
+     expect($closure)->toThrow(new ReadOnlyException('forceCreate', 'User'));
    });
 });
   describe("::save()", function(){
@@ -33,7 +33,7 @@ describe("User", function() {
         function(){
           $user = new User;
           $user->save([]);
-        })->toThrow(new ReadOnlyException('Calling [save] method on read-only model [User] is not allowed.'));
+        })->toThrow(new ReadOnlyException('save', 'User'));
     });
   });
   describe("::update()", function(){
@@ -42,7 +42,7 @@ describe("User", function() {
         function(){
           $user = new User;
           $user->update([]);
-        })->toThrow(new ReadOnlyException('Calling [update] method on read-only model [User] is not allowed.'));
+        })->toThrow(new ReadOnlyException('update', 'User'));
       });
    });
   describe("::firstOrCreate()", function(){
@@ -51,7 +51,7 @@ describe("User", function() {
         function(){
           $user = new User;
           $user->firstOrCreate([]);
-        })->toThrow(new ReadOnlyException('Calling [firstOrCreate] method on read-only model [User] is not allowed.'));
+        })->toThrow(new ReadOnlyException('firstOrCreate', 'User'));
     });
   });
   describe("::firstOrNew()", function(){
@@ -60,7 +60,7 @@ describe("User", function() {
         function(){
           $user = new User;
           $user->firstOrNew([]);
-        })->toThrow(new ReadOnlyException('Calling [firstOrNew] method on read-only model [User] is not allowed.'));
+        })->toThrow(new ReadOnlyException('firstOrNew', 'User'));
     });
    });
   describe("::delete()", function(){
@@ -69,7 +69,7 @@ describe("User", function() {
         function(){
           $user = new User;
           $user->delete();
-        })->toThrow(new ReadOnlyException('Calling [delete] method on read-only model [User] is not allowed.'));
+        })->toThrow(new ReadOnlyException('delete', 'User'));
     });
    });
   describe("::destroy()", function(){
@@ -78,7 +78,7 @@ describe("User", function() {
         function(){
           $user = new User;
           $user->destroy(1);
-        })->toThrow(new ReadOnlyException('Calling [destroy] method on read-only model [User] is not allowed.'));
+        })->toThrow(new ReadOnlyException('destroy', 'User'));
     });
    });
   describe("::restore()", function(){
@@ -87,7 +87,7 @@ describe("User", function() {
         function(){
           $user = new User;
           $user->restore();
-        })->toThrow(new ReadOnlyException('Calling [restore] method on read-only model [User] is not allowed.'));
+        })->toThrow(new ReadOnlyException('restore', 'User'));
     });
    });
   describe("::forceDelete()", function(){
@@ -96,7 +96,7 @@ describe("User", function() {
         function(){
           $user = new User;
           $user->forceDelete();
-        })->toThrow(new ReadOnlyException('Calling [forceDelete] method on read-only model [User] is not allowed.'));
+        })->toThrow(new ReadOnlyException('forceDelete', 'User'));
       });
     });
    describe("::performDeleteOnModel()", function(){
@@ -105,7 +105,7 @@ describe("User", function() {
          function(){
            $user = new User;
            $user->performDeleteOnModel();
-         })->toThrow(new ReadOnlyException('Calling [performDeleteOnModel] method on read-only model [User] is not allowed.'));
+         })->toThrow(new ReadOnlyException('performDeleteOnModel', 'User'));
       });
     });
   describe("::push()", function(){
@@ -114,7 +114,7 @@ describe("User", function() {
         function(){
           $user = new User;
           $user->push();
-        })->toThrow(new ReadOnlyException('Calling [push] method on read-only model [User] is not allowed.'));
+        })->toThrow(new ReadOnlyException('push', 'User'));
      });
    });
  describe("::finishSave()", function(){
@@ -123,7 +123,7 @@ describe("User", function() {
        function(){
          $user = new User;
          $user->finishSave([]);
-       })->toThrow(new ReadOnlyException('Calling [finishSave] method on read-only model [User] is not allowed.'));
+       })->toThrow(new ReadOnlyException('finishSave', 'User'));
      });
   });
   describe("::performUpdate()", function(){
@@ -141,7 +141,7 @@ describe("User", function() {
          function(){
            $user = new User;
            $user->touch();
-         })->toThrow(new ReadOnlyException('Calling [touch] method on read-only model [User] is not allowed.'));
+         })->toThrow(new ReadOnlyException('touch', 'User'));
       });
     });
    describe("::truncate()", function(){
@@ -150,7 +150,7 @@ describe("User", function() {
          function(){
            $user = new User;
            $user->truncate();
-         })->toThrow(new ReadOnlyException('Calling [truncate] method on read-only model [User] is not allowed.'));
+         })->toThrow(new ReadOnlyException('truncate', 'User'));
       });
     });
    describe("::insert()", function(){
@@ -159,7 +159,7 @@ describe("User", function() {
          function(){
            $user = new User;
            $user->insert();
-         })->toThrow(new ReadOnlyException('Calling [insert] method on read-only model [User] is not allowed.'));
+         })->toThrow(new ReadOnlyException('insert', 'User'));
       });
     });
 });
