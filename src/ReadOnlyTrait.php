@@ -6,186 +6,167 @@ use MichaelAChrisco\ReadOnly\ReadOnlyException;
 
 trait ReadOnlyTrait
 {
-    public static function readOnly($class)
+    /**
+     * Throws ReadOnlyException on create
+     * @param array $attributes
+     * @throws ReadOnlyException
+     */
+    public static function create(array $attributes = [])
     {
-        throw new ReadOnlyException("Not allowed to persist changes in read-only model {$class}");
-    }
-
-  /**
-   * throws ReadOnlyException on create
-   * @method create
-   * @param  array $attributes
-   *
-   */
-  public static function create(array $attributes = [])
-  {
-      ReadOnlyTrait::readOnly(get_called_class());
-  }
-
-/**
- * throws ReadOnlyException on forceCreate
- * @method forceCreate
- * @param  array       $attributes
- *
- */
-  public static function forceCreate(array $attributes)
-  {
-      ReadOnlyTrait::readOnly(get_called_class());
-  }
-
-  /**
-   * throws ReadOnlyException on save
-   * @method save
-   * @param  array $options
-   *
-   */
-  public function save(array $options = [])
-  {
-      ReadOnlyTrait::readOnly(get_called_class());
-  }
-
-/**
- * throws ReadOnlyException on update
- * @method update
- * @param  [type] $attributes
- * @param   $options
- *
- */
-  public function update(array $attributes = [], array $options = [])
-  {
-      ReadOnlyTrait::readOnly(get_called_class());
-  }
-
-/**
- * throws ReadOnlyException on firstOrCreate
- * @method firstOrCreate
- * @param  array         $arr
- *
- */
-  public static function firstOrCreate(array $arr)
-  {
-      ReadOnlyTrait::readOnly(get_called_class());
-  }
-
-/**
- * throws ReadOnlyException on firstOrNew
- * @method firstOrNew
- * @param  array      $arr
- *
- */
-  public static function firstOrNew(array $arr)
-  {
-      ReadOnlyTrait::readOnly(get_called_class());
-  }
-
-/**
- * throws ReadOnlyException on delete
- * @method delete
- *
- */
-  public function delete()
-  {
-      ReadOnlyTrait::readOnly(get_called_class());
-  }
-
-/**
- * throws ReadOnlyException on destroy
- * @method destroy
- * @param  mixed  $ids
- *
- */
-  public static function destroy($ids)
-  {
-      ReadOnlyTrait::readOnly(get_called_class());
-  }
-
-/**
- * throws ReadOnlyException on restore
- * @method restore
- *
- */
-  public function restore()
-  {
-      ReadOnlyTrait::readOnly(get_called_class());
-  }
-
-/**
- * throws ReadOnlyException on forceDelete
- * @method forceDelete
- *
- */
-  public function forceDelete()
-  {
-      ReadOnlyTrait::readOnly(get_called_class());
-  }
-
-  /**
-   * throws ReadOnlyException on performDeleteOnModel
-   * @method performDeleteOnModel
-   *
-   */
-    public function performDeleteOnModel()
-    {
-        ReadOnlyTrait::readOnly(get_called_class());
-    }
-
-  /**
-   * throws ReadOnlyException on push
-   * @method push
-   *
-   */
-    public function push()
-    {
-        ReadOnlyTrait::readOnly(get_called_class());
-    }
-
-  /**
-   * throws ReadOnlyException on finishSave
-   * @method finishSave
-   *
-   */
-    public function finishSave(array $options)
-    {
-        ReadOnlyTrait::readOnly(get_called_class());
-    }
-
-  /**
-   * throws ReadOnlyException on performUpdate
-   * @method performUpdate
-   *
-   */
-    public function performUpdate(Builder $query, array $options = [])
-    {
-        ReadOnlyTrait::readOnly(get_called_class());
-    }
-
-  /**
-   * throws ReadOnlyException on touch
-   * @method touch
-   *
-   */
-    public function touch()
-    {
-        ReadOnlyTrait::readOnly(get_called_class());
-    }
-
-   /**
-   * throws ReadOnlyException on insert
-   * @method insert
-   *
-   */
-    public function insert()
-    {
-        ReadOnlyTrait::readOnly(get_called_class());
+        throw new ReadOnlyException(__FUNCTION__, get_called_class());
     }
 
     /**
-   * throws ReadOnlyException on truncate
-   * @method truncate
-   *
-   */
+     * Throws ReadOnlyException on forceCreate
+     * @param array $attributes
+     * @throws ReadOnlyException
+     */
+    public static function forceCreate(array $attributes)
+    {
+        throw new ReadOnlyException(__FUNCTION__, get_called_class());
+    }
+
+    /**
+     * Throws ReadOnlyException on save
+     * @param array $options
+     * @throws ReadOnlyException
+     */
+    public function save(array $options = [])
+    {
+        throw new ReadOnlyException(__FUNCTION__, get_called_class());
+    }
+
+    /**
+     * Throws ReadOnlyException on update
+     * @param array $attributes
+     * @param array $options
+     * @throws ReadOnlyException
+     */
+    public function update(array $attributes = [], array $options = [])
+    {
+        throw new ReadOnlyException(__FUNCTION__, get_called_class());
+    }
+
+    /**
+     * Throws ReadOnlyException on firstOrCreate
+     * @param array $arr
+     * @throws ReadOnlyException
+     */
+    public static function firstOrCreate(array $arr)
+    {
+        throw new ReadOnlyException(__FUNCTION__, get_called_class());
+    }
+
+    /**
+     * Throws ReadOnlyException on firstOrNew
+     * @param array $arr
+     * @throws ReadOnlyException
+     */
+    public static function firstOrNew(array $arr)
+    {
+        throw new ReadOnlyException(__FUNCTION__, get_called_class());
+    }
+
+    /**
+     * Throws ReadOnlyException on delete
+     * @throws ReadOnlyException
+     */
+    public function delete()
+    {
+        throw new ReadOnlyException(__FUNCTION__, get_called_class());
+    }
+
+    /**
+     * Throws ReadOnlyException on destroy
+     * @param mixed $ids
+     * @throws ReadOnlyException
+     */
+    public static function destroy($ids)
+    {
+        throw new ReadOnlyException(__FUNCTION__, get_called_class());
+    }
+
+    /**
+     * Throws ReadOnlyException on restore
+     * @throws ReadOnlyException
+     */
+    public function restore()
+    {
+        throw new ReadOnlyException(__FUNCTION__, get_called_class());
+    }
+
+    /**
+     * Throws ReadOnlyException on forceDelete
+     * @throws ReadOnlyException
+     */
+    public function forceDelete()
+    {
+        throw new ReadOnlyException(__FUNCTION__, get_called_class());
+    }
+
+    /**
+     * Throws ReadOnlyException on performDeleteOnModel
+     * @throws ReadOnlyException
+     */
+    public function performDeleteOnModel()
+    {
+        throw new ReadOnlyException(__FUNCTION__, get_called_class());
+    }
+
+    /**
+     * Throws ReadOnlyException on push
+     * @throws ReadOnlyException
+     */
+    public function push()
+    {
+        throw new ReadOnlyException(__FUNCTION__, get_called_class());
+    }
+
+    /**
+     * Throws ReadOnlyException on finishSave
+     * @param array $options
+     * @throws ReadOnlyException
+     */
+    public function finishSave(array $options)
+    {
+        throw new ReadOnlyException(__FUNCTION__, get_called_class());
+    }
+
+    /**
+     * Throws ReadOnlyException on performUpdate
+     * @param Builder $query
+     * @param array $options
+     * @throws ReadOnlyException
+     */
+    public function performUpdate(Builder $query, array $options = [])
+    {
+        throw new ReadOnlyException(__FUNCTION__, get_called_class());
+    }
+
+    /**
+     * Throws ReadOnlyException on touch
+     * @throws ReadOnlyException
+     */
+    public function touch()
+    {
+        throw new ReadOnlyException(__FUNCTION__, get_called_class());
+    }
+
+    /**
+     * Throws ReadOnlyException on insert
+     * @throws ReadOnlyException
+     */
+    public function insert()
+    {
+        throw new ReadOnlyException(__FUNCTION__, get_called_class());
+    }
+
+    /**
+     * Throws ReadOnlyException on truncate
+     * @throws ReadOnlyException
+     */
     public function truncate()
     {
-        ReadOnlyTrait::readOnly(get_called_class());
+        throw new ReadOnlyException(__FUNCTION__, get_called_class());
     }
 }
