@@ -1,9 +1,8 @@
 <?php
 require_once('src/ReadOnlyTrait.php');
-use MichaelAChrisco\ReadOnly\ReadOnlyException,
-    MichaelAChrisco\ReadOnly\ReadOnlyTrait,
-    Illuminate\Database\Eloquent\Model;
-// use Illuminate\Database\Eloquent\Builder;
+
+use MichaelAChrisco\ReadOnly\ReadOnlyException;
+use MichaelAChrisco\ReadOnly\ReadOnlyTrait;
 
 class User extends Illuminate\Database\Eloquent\Model {
   use ReadOnlyTrait;
@@ -16,7 +15,7 @@ describe("User", function() {
         function(){
           $user = new User;
           $user->create([]);
-        })->toThrow(new ReadOnlyException("Not allowed to persist changes in read-only model User"));
+        })->toThrow(new ReadOnlyException('create', 'User'));
     });
  });
  describe("::forceCreate()", function(){
@@ -25,7 +24,7 @@ describe("User", function() {
        $user = new User;
        $user->forceCreate([]);
      };
-     expect($closure)->toThrow(new ReadOnlyException("Not allowed to persist changes in read-only model User"));
+     expect($closure)->toThrow(new ReadOnlyException('forceCreate', 'User'));
    });
 });
   describe("::save()", function(){
@@ -34,7 +33,7 @@ describe("User", function() {
         function(){
           $user = new User;
           $user->save([]);
-        })->toThrow(new ReadOnlyException("Not allowed to persist changes in read-only model User"));
+        })->toThrow(new ReadOnlyException('save', 'User'));
     });
   });
   describe("::update()", function(){
@@ -43,7 +42,7 @@ describe("User", function() {
         function(){
           $user = new User;
           $user->update([]);
-        })->toThrow(new ReadOnlyException("Not allowed to persist changes in read-only model User"));
+        })->toThrow(new ReadOnlyException('update', 'User'));
       });
    });
   describe("::firstOrCreate()", function(){
@@ -52,7 +51,7 @@ describe("User", function() {
         function(){
           $user = new User;
           $user->firstOrCreate([]);
-        })->toThrow(new ReadOnlyException("Not allowed to persist changes in read-only model User"));
+        })->toThrow(new ReadOnlyException('firstOrCreate', 'User'));
     });
   });
   describe("::firstOrNew()", function(){
@@ -61,7 +60,7 @@ describe("User", function() {
         function(){
           $user = new User;
           $user->firstOrNew([]);
-        })->toThrow(new ReadOnlyException("Not allowed to persist changes in read-only model User"));
+        })->toThrow(new ReadOnlyException('firstOrNew', 'User'));
     });
    });
   describe("::delete()", function(){
@@ -70,7 +69,7 @@ describe("User", function() {
         function(){
           $user = new User;
           $user->delete();
-        })->toThrow(new ReadOnlyException("Not allowed to persist changes in read-only model User"));
+        })->toThrow(new ReadOnlyException('delete', 'User'));
     });
    });
   describe("::destroy()", function(){
@@ -79,7 +78,7 @@ describe("User", function() {
         function(){
           $user = new User;
           $user->destroy(1);
-        })->toThrow(new ReadOnlyException("Not allowed to persist changes in read-only model User"));
+        })->toThrow(new ReadOnlyException('destroy', 'User'));
     });
    });
   describe("::restore()", function(){
@@ -88,7 +87,7 @@ describe("User", function() {
         function(){
           $user = new User;
           $user->restore();
-        })->toThrow(new ReadOnlyException("Not allowed to persist changes in read-only model User"));
+        })->toThrow(new ReadOnlyException('restore', 'User'));
     });
    });
   describe("::forceDelete()", function(){
@@ -97,7 +96,7 @@ describe("User", function() {
         function(){
           $user = new User;
           $user->forceDelete();
-        })->toThrow(new ReadOnlyException("Not allowed to persist changes in read-only model User"));
+        })->toThrow(new ReadOnlyException('forceDelete', 'User'));
       });
     });
    describe("::performDeleteOnModel()", function(){
@@ -106,7 +105,7 @@ describe("User", function() {
          function(){
            $user = new User;
            $user->performDeleteOnModel();
-         })->toThrow(new ReadOnlyException("Not allowed to persist changes in read-only model User"));
+         })->toThrow(new ReadOnlyException('performDeleteOnModel', 'User'));
       });
     });
   describe("::push()", function(){
@@ -115,7 +114,7 @@ describe("User", function() {
         function(){
           $user = new User;
           $user->push();
-        })->toThrow(new ReadOnlyException("Not allowed to persist changes in read-only model User"));
+        })->toThrow(new ReadOnlyException('push', 'User'));
      });
    });
  describe("::finishSave()", function(){
@@ -124,7 +123,7 @@ describe("User", function() {
        function(){
          $user = new User;
          $user->finishSave([]);
-       })->toThrow(new ReadOnlyException("Not allowed to persist changes in read-only model User"));
+       })->toThrow(new ReadOnlyException('finishSave', 'User'));
      });
   });
   describe("::performUpdate()", function(){
@@ -142,7 +141,7 @@ describe("User", function() {
          function(){
            $user = new User;
            $user->touch();
-         })->toThrow(new ReadOnlyException("Not allowed to persist changes in read-only model User"));
+         })->toThrow(new ReadOnlyException('touch', 'User'));
       });
     });
    describe("::truncate()", function(){
@@ -151,7 +150,7 @@ describe("User", function() {
          function(){
            $user = new User;
            $user->truncate();
-         })->toThrow(new ReadOnlyException("Not allowed to persist changes in read-only model User"));
+         })->toThrow(new ReadOnlyException('truncate', 'User'));
       });
     });
    describe("::insert()", function(){
@@ -160,10 +159,7 @@ describe("User", function() {
          function(){
            $user = new User;
            $user->insert();
-         })->toThrow(new ReadOnlyException("Not allowed to persist changes in read-only model User"));
+         })->toThrow(new ReadOnlyException('insert', 'User'));
       });
     });
 });
-
-
- ?>
