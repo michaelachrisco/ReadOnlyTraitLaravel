@@ -136,7 +136,7 @@ describe("User", function() {
     });
    });
    describe("::touch()", function(){
-     it("is expected to throw Error", function() {
+     it("is expected to throw ReadOnlyException", function() {
        expect(
          function(){
            $user = new User;
@@ -145,7 +145,7 @@ describe("User", function() {
       });
     });
    describe("::truncate()", function(){
-     it("is expected to throw Error", function() {
+     it("is expected to throw ReadOnlyException", function() {
        expect(
          function(){
            $user = new User;
@@ -154,7 +154,7 @@ describe("User", function() {
       });
     });
    describe("::insert()", function(){
-     it("is expected to throw Error", function() {
+     it("is expected to throw ReadOnlyException", function() {
        expect(
          function(){
            $user = new User;
