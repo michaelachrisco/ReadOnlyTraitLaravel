@@ -47,22 +47,6 @@ $result = $legacyUser->save();
  * touch
  * insert
  * truncate
-
-## TODO:
-  * saveOrFail
-  * performInsert(??)
-  * insertAndSetId(??)
-  * Add in a PR for any other methods you can find!
-
-
-### registerModelEvents (look into best way to implement)  
-  * saving
-  * saved
-  * updating
-  * updated
-  * creating
-  * created
-  * deleting
-  * deleted
+ * Add in a PR for any other methods you can find!
 
 ###
