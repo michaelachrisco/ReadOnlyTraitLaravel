@@ -24,7 +24,8 @@ $legacyUser = new User;
 $legacyUser->set_user_name('bob');
 
 $result = $legacyUser->save();
-//User is not saved and ReadOnlyException is thrown.
+//User is not saved. 
+//ReadOnlyException is thrown.
  ?>
 ```
 
