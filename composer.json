@@ -7,6 +7,9 @@
             "email": "michaelachrisco@gmail.com"
         }
     ],
+    "keywords": ["laravel", "eloquent", "read-only"],
+    "type": "library",
+    "license": "MIT",
     "autoload": {
         "psr-4": {"MichaelAChrisco\\ReadOnly\\": "src/"}
     },
