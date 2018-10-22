@@ -49,20 +49,33 @@ trait ReadOnlyTrait
 
     /**
      * Throws ReadOnlyException on firstOrCreate
-     * @param array $arr
+     * @param  array  $attributes
+     * @param  array  $values
      * @throws ReadOnlyException
      */
-    public static function firstOrCreate(array $arr)
+    public static function firstOrCreate(array $attributes, array $values = [])
     {
         throw new ReadOnlyException(__FUNCTION__, get_called_class());
     }
 
     /**
      * Throws ReadOnlyException on firstOrNew
-     * @param array $arr
+     * @param  array  $attributes
+     * @param  array  $values
      * @throws ReadOnlyException
      */
-    public static function firstOrNew(array $arr)
+    public static function firstOrNew(array $attributes, array $values = [])
+    {
+        throw new ReadOnlyException(__FUNCTION__, get_called_class());
+    }
+
+    /**
+     * Throws ReadOnlyException on updateOrCreate
+     * @param  array  $attributes
+     * @param  array  $values
+     * @throws ReadOnlyException
+     */
+    public static function updateOrCreate(array $attributes, array $values = [])
     {
         throw new ReadOnlyException(__FUNCTION__, get_called_class());
     }
