@@ -23,4 +23,3 @@ install:
 
 script:
   - ./vendor/bin/kahlan -reporter=verbose
-  - ./vendor/friendsofphp/php-cs-fixer/php-cs-fixer fix src/
