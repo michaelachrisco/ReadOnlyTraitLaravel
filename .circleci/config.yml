@@ -3,7 +3,7 @@ version: 2
 jobs:
   build:
     docker: 
-      - image: circleci/php:atest
+      - image: circleci/php:latest
     working_directory: ~/ReadOnlyTraitLaravel
     steps: # a set of executable commands
       - checkout
