@@ -19,3 +19,9 @@ jobs:
       - run: sudo composer self-update
       - run: composer install -n --prefer-dist
       - run: ./vendor/bin/kahlan -reporter=verbose
+workflows:
+  version: 2
+  build:
+    jobs:
+      - build_7.3
+      - build_latest
