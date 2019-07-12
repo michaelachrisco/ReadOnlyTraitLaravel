@@ -3,6 +3,16 @@ version: 2
 jobs:
   build:
     docker: 
+      - image: circleci/php:7.3
+    working_directory: ~/ReadOnlyTraitLaravel
+    steps: # a set of executable commands
+      - checkout
+      - run: sudo composer self-update
+      - run: composer install -n --prefer-dist
+      - run: ./vendor/bin/kahlan -reporter=verbose
+      
+  build:
+    docker: 
       - image: circleci/php:latest
     working_directory: ~/ReadOnlyTraitLaravel
     steps: # a set of executable commands
