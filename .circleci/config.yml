@@ -1,7 +1,7 @@
-version: 2
+version: 2.1
 
 jobs:
-  build_7.3:
+  build_php_version:
     docker: 
       - image: circleci/php:7.3
     working_directory: ~/ReadOnlyTraitLaravel
@@ -23,5 +23,5 @@ workflows:
   version: 2
   build:
     jobs:
-      - build_7.3
+      - build_php_version
       - build_latest

@@ -1,6 +1,6 @@
 {
     "name": "michaelachrisco/readonly",
-    "description": "Readonly Models for Laravel 5",
+    "description": "Readonly Models for Laravel 5+",
     "authors": [
         {
             "name": "Michael Chrisco",
