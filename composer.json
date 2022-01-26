@@ -1,5 +1,5 @@
 {
-    "name": "michaelachrisco/read-only",
+    "name": "michaelachrisco/readonly",
     "description": "Readonly Models for Laravel 5+",
     "authors": [
         {
@@ -11,7 +11,7 @@
     "type": "library",
     "license": "MIT",
     "autoload": {
-        "psr-4": {"MichaelAChrisco\\ReadOnly\\": "src/"}
+        "psr-4": {"MichaelAChrisco\\ReadOnlyTrait\\": "src/"}
     },
     "require": {
       "php": ">=7.0.0"

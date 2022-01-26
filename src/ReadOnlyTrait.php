@@ -1,8 +1,8 @@
 <?php
-namespace MichaelAChrisco\ReadOnly;
+namespace MichaelAChrisco\ReadOnlyTrait;
 
 use Illuminate\Database\Eloquent\Builder;
-use MichaelAChrisco\ReadOnly\ReadOnlyException;
+use MichaelAChrisco\ReadOnlyTrait\ReadOnlyException;
 
 trait ReadOnlyTrait
 {

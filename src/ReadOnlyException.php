@@ -1,5 +1,5 @@
 <?php
-namespace MichaelAChrisco\ReadOnly;
+namespace MichaelAChrisco\ReadOnlyTrait;
 
 class ReadOnlyException extends \RuntimeException
 {

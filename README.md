@@ -15,7 +15,7 @@ composer require michaelachrisco/readonly
 ```php
 <?php
 use Illuminate\Database\Eloquent\Model;
-use MichaelAChrisco\ReadOnly\ReadOnlyTrait;
+use MichaelAChrisco\ReadOnlyTrait\ReadOnlyTrait;
 class User extends Model {
   use ReadOnlyTrait;
 }
