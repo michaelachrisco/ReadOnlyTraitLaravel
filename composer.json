@@ -18,6 +18,6 @@
     },
     "require-dev": {
         "kahlan/kahlan": "^2.4",
-        "illuminate/database": "=9.21.0"
+        "illuminate/database": "=5.2.0"
     }
 }
