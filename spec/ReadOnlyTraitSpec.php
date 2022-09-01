@@ -164,7 +164,15 @@ describe("User", function() {
     });
 });
 
-class UserReadOnlyNotActive extends Illuminate\Database\Eloquent\Model
+class MockModel
+{
+  public static function create(array $attributes = [])
+  {
+      return true;
+  }
+}
+
+class UserReadOnlyNotActive extends MockModel
 {
     use ReadOnlyTrait;
 
@@ -176,12 +184,9 @@ class UserReadOnlyNotActive extends Illuminate\Database\Eloquent\Model
 
 describe("UserReadOnlyNotActive", function () {
     describe("::create()", function () {
-        it("is expected to not throw a ReadOnlyException", function () {
-            expect(
-                function () {
-                    $user = new UserReadOnlyNotActive;
-                    $user->create([]);
-                })->not->toThrow(new ReadOnlyException('create', 'User'));
-        });
+      it("expects `create()` to be toBeTruthy", function() {
+          $user = new UserReadOnlyNotActive;
+          expect($user->create([]))->toBeTruthy();
+      });
     });
 });
