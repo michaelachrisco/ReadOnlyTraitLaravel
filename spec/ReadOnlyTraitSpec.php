@@ -176,12 +176,12 @@ class UserReadOnlyNotActive extends Illuminate\Database\Eloquent\Model
 
 describe("UserReadOnlyNotActive", function () {
     describe("::create()", function () {
-        it("is expected to throw ReadOnlyException", function () {
+        it("is expected to not throw a ReadOnlyException", function () {
             expect(
                 function () {
                     $user = new UserReadOnlyNotActive;
                     $user->create([]);
-                })->toBe('??????');
+                })->not->toThrow(new ReadOnlyException('create', 'User'));
         });
     });
 });
