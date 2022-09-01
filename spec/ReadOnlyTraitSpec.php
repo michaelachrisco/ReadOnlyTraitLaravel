@@ -163,3 +163,25 @@ describe("User", function() {
       });
     });
 });
+
+class UserReadOnlyNotActive extends Illuminate\Database\Eloquent\Model
+{
+    use ReadOnlyTrait;
+
+    protected static function isActive(): bool
+    {
+        return false;
+    }
+}
+
+describe("UserReadOnlyNotActive", function () {
+    describe("::create()", function () {
+        it("is expected to throw ReadOnlyException", function () {
+            expect(
+                function () {
+                    $user = new UserReadOnlyNotActive;
+                    $user->create([]);
+                })->toBe('??????');
+        });
+    });
+});
