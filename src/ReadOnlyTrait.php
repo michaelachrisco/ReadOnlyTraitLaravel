@@ -2,10 +2,13 @@
 namespace MichaelAChrisco\ReadOnly;
 
 use Illuminate\Database\Eloquent\Builder;
-use MichaelAChrisco\ReadOnly\ReadOnlyException;
 
 trait ReadOnlyTrait
 {
+    protected static function isActive(): bool {
+        return true;
+    }
+
     /**
      * Throws ReadOnlyException on create
      * @param array $attributes
@@ -13,7 +16,10 @@ trait ReadOnlyTrait
      */
     public static function create(array $attributes = [])
     {
-        throw new ReadOnlyException(__FUNCTION__, get_called_class());
+        if (static::isActive()) {
+            throw new ReadOnlyException(__FUNCTION__, get_called_class());
+        }
+        return parent::create($attributes);
     }
 
     /**
@@ -23,7 +29,10 @@ trait ReadOnlyTrait
      */
     public static function forceCreate(array $attributes)
     {
-        throw new ReadOnlyException(__FUNCTION__, get_called_class());
+        if (static::isActive()) {
+            throw new ReadOnlyException(__FUNCTION__, get_called_class());
+        }
+        return parent::forceCreate($attributes);
     }
 
     /**
@@ -33,7 +42,10 @@ trait ReadOnlyTrait
      */
     public function save(array $options = [])
     {
-        throw new ReadOnlyException(__FUNCTION__, get_called_class());
+        if (static::isActive()) {
+            throw new ReadOnlyException(__FUNCTION__, get_called_class());
+        }
+        return parent::save($options);
     }
 
     /**
@@ -44,7 +56,10 @@ trait ReadOnlyTrait
      */
     public function update(array $attributes = [], array $options = [])
     {
-        throw new ReadOnlyException(__FUNCTION__, get_called_class());
+        if (static::isActive()) {
+            throw new ReadOnlyException(__FUNCTION__, get_called_class());
+        }
+        return parent::update($attributes, $options);
     }
 
     /**
@@ -55,7 +70,10 @@ trait ReadOnlyTrait
      */
     public static function firstOrCreate(array $attributes, array $values = [])
     {
-        throw new ReadOnlyException(__FUNCTION__, get_called_class());
+        if (static::isActive()) {
+            throw new ReadOnlyException(__FUNCTION__, get_called_class());
+        }
+        return parent::firstOrCreate( $attributes,  $values);
     }
 
     /**
@@ -66,7 +84,10 @@ trait ReadOnlyTrait
      */
     public static function firstOrNew(array $attributes, array $values = [])
     {
-        throw new ReadOnlyException(__FUNCTION__, get_called_class());
+        if (static::isActive()) {
+            throw new ReadOnlyException(__FUNCTION__, get_called_class());
+        }
+        return parent::firstOrNew( $attributes,  $values);
     }
 
     /**
@@ -77,7 +98,10 @@ trait ReadOnlyTrait
      */
     public static function updateOrCreate(array $attributes, array $values = [])
     {
-        throw new ReadOnlyException(__FUNCTION__, get_called_class());
+        if (static::isActive()) {
+            throw new ReadOnlyException(__FUNCTION__, get_called_class());
+        }
+        return parent::updateOrCreate( $attributes,  $values );
     }
 
     /**
@@ -86,7 +110,10 @@ trait ReadOnlyTrait
      */
     public function delete()
     {
-        throw new ReadOnlyException(__FUNCTION__, get_called_class());
+        if (static::isActive()) {
+            throw new ReadOnlyException(__FUNCTION__, get_called_class());
+        }
+        return parent::delete();
     }
 
     /**
@@ -96,7 +123,10 @@ trait ReadOnlyTrait
      */
     public static function destroy($ids)
     {
-        throw new ReadOnlyException(__FUNCTION__, get_called_class());
+        if (static::isActive()) {
+            throw new ReadOnlyException(__FUNCTION__, get_called_class());
+        }
+        return parent::destroy($ids);
     }
 
     /**
@@ -105,7 +135,10 @@ trait ReadOnlyTrait
      */
     public function restore()
     {
-        throw new ReadOnlyException(__FUNCTION__, get_called_class());
+        if (static::isActive()) {
+            throw new ReadOnlyException(__FUNCTION__, get_called_class());
+        }
+        return parent::restore();
     }
 
     /**
@@ -114,7 +147,10 @@ trait ReadOnlyTrait
      */
     public function forceDelete()
     {
-        throw new ReadOnlyException(__FUNCTION__, get_called_class());
+        if (static::isActive()) {
+            throw new ReadOnlyException(__FUNCTION__, get_called_class());
+        }
+        return parent::forceDelete();
     }
 
     /**
@@ -123,7 +159,10 @@ trait ReadOnlyTrait
      */
     public function performDeleteOnModel()
     {
-        throw new ReadOnlyException(__FUNCTION__, get_called_class());
+        if (static::isActive()) {
+            throw new ReadOnlyException(__FUNCTION__, get_called_class());
+        }
+        parent::performDeleteOnModel();
     }
 
     /**
@@ -132,7 +171,10 @@ trait ReadOnlyTrait
      */
     public function push()
     {
-        throw new ReadOnlyException(__FUNCTION__, get_called_class());
+        if (static::isActive()) {
+            throw new ReadOnlyException(__FUNCTION__, get_called_class());
+        }
+        return parent::push();
     }
 
     /**
@@ -142,7 +184,10 @@ trait ReadOnlyTrait
      */
     public function finishSave(array $options)
     {
-        throw new ReadOnlyException(__FUNCTION__, get_called_class());
+        if (static::isActive()) {
+            throw new ReadOnlyException(__FUNCTION__, get_called_class());
+        }
+        parent::finishSave($options);
     }
 
     /**
@@ -151,9 +196,12 @@ trait ReadOnlyTrait
      * @param array $options
      * @throws ReadOnlyException
      */
-    public function performUpdate(Builder $query, array $options = [])
+    public function performUpdate(Builder $query, array $options = []): bool
     {
-        throw new ReadOnlyException(__FUNCTION__, get_called_class());
+        if (static::isActive()) {
+            throw new ReadOnlyException(__FUNCTION__, get_called_class());
+        }
+        return parent::performUpdate($query, $options);
     }
 
     /**
@@ -163,7 +211,10 @@ trait ReadOnlyTrait
      */
     public function touch($attribute = null)
     {
-        throw new ReadOnlyException(__FUNCTION__, get_called_class());
+        if (static::isActive()) {
+            throw new ReadOnlyException(__FUNCTION__, get_called_class());
+        }
+        return parent::touch($attribute);
     }
 
     /**
@@ -172,7 +223,10 @@ trait ReadOnlyTrait
      */
     public function insert()
     {
-        throw new ReadOnlyException(__FUNCTION__, get_called_class());
+        if (static::isActive()) {
+            throw new ReadOnlyException(__FUNCTION__, get_called_class());
+        }
+        return parent::insert();
     }
 
     /**
@@ -181,6 +235,9 @@ trait ReadOnlyTrait
      */
     public function truncate()
     {
-        throw new ReadOnlyException(__FUNCTION__, get_called_class());
+        if (static::isActive()) {
+            throw new ReadOnlyException(__FUNCTION__, get_called_class());
+        }
+        return parent::truncate();
     }
 }
