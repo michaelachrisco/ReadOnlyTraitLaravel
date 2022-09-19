@@ -163,3 +163,30 @@ describe("User", function() {
       });
     });
 });
+
+class MockModel
+{
+  public static function create(array $attributes = [])
+  {
+      return true;
+  }
+}
+
+class UserReadOnlyNotActive extends MockModel
+{
+    use ReadOnlyTrait;
+
+    protected static function isActive(): bool
+    {
+        return false;
+    }
+}
+
+describe("UserReadOnlyNotActive", function () {
+    describe("::create()", function () {
+      it("expects `create()` to be toBeTruthy", function() {
+          $user = new UserReadOnlyNotActive;
+          expect($user->create([]))->toBeTruthy();
+      });
+    });
+});

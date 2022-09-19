@@ -3,12 +3,12 @@ version: 2.1
 jobs:
   build_php_version:
     docker: 
-      - image: circleci/php:7.3
+      - image: cimg/php:8.0.20
     working_directory: ~/ReadOnlyTraitLaravel
     steps: # a set of executable commands
       - checkout
       - run: sudo composer self-update
-      - run: composer install -n --prefer-dist
+      - run: composer install -n --prefer-dist --no-plugins
       - run: ./vendor/bin/kahlan -reporter=verbose
   build_latest:
     docker: 
@@ -17,7 +17,7 @@ jobs:
     steps: # a set of executable commands
       - checkout
       - run: sudo composer self-update
-      - run: composer install -n --prefer-dist
+      - run: composer install -n --prefer-dist --no-plugins
       - run: ./vendor/bin/kahlan -reporter=verbose
 workflows:
   version: 2
