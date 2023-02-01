@@ -5,7 +5,7 @@ Ideally, this would be used in addition to DB permissions to ensure users and de
 ## Install
 
 ```
-composer require michaelachrisco/readonly
+composer require michaelachrisco/readonlytrait
 ```
 
 ## To use:
