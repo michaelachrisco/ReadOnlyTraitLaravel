@@ -13,6 +13,7 @@ trait ReadOnlyTrait
      * Throws ReadOnlyException on create
      * @param array $attributes
      * @throws ReadOnlyException
+     * @deprecated Method not allowed on read-only model
      */
     public static function create(array $attributes = [])
     {
@@ -26,6 +27,7 @@ trait ReadOnlyTrait
      * Throws ReadOnlyException on forceCreate
      * @param array $attributes
      * @throws ReadOnlyException
+     * @deprecated Method not allowed on read-only model
      */
     public static function forceCreate(array $attributes)
     {
@@ -39,6 +41,7 @@ trait ReadOnlyTrait
      * Throws ReadOnlyException on save
      * @param array $options
      * @throws ReadOnlyException
+     * @deprecated Method not allowed on read-only model
      */
     public function save(array $options = [])
     {
@@ -53,6 +56,7 @@ trait ReadOnlyTrait
      * @param array $attributes
      * @param array $options
      * @throws ReadOnlyException
+     * @deprecated Method not allowed on read-only model
      */
     public function update(array $attributes = [], array $options = [])
     {
@@ -67,6 +71,7 @@ trait ReadOnlyTrait
      * @param  array  $attributes
      * @param  array  $values
      * @throws ReadOnlyException
+     * @deprecated Method not allowed on read-only model
      */
     public static function firstOrCreate(array $attributes, array $values = [])
     {
@@ -81,6 +86,7 @@ trait ReadOnlyTrait
      * @param  array  $attributes
      * @param  array  $values
      * @throws ReadOnlyException
+     * @deprecated Method not allowed on read-only model
      */
     public static function firstOrNew(array $attributes, array $values = [])
     {
@@ -95,6 +101,7 @@ trait ReadOnlyTrait
      * @param  array  $attributes
      * @param  array  $values
      * @throws ReadOnlyException
+     * @deprecated Method not allowed on read-only model
      */
     public static function updateOrCreate(array $attributes, array $values = [])
     {
@@ -107,6 +114,7 @@ trait ReadOnlyTrait
     /**
      * Throws ReadOnlyException on delete
      * @throws ReadOnlyException
+     * @deprecated Method not allowed on read-only model
      */
     public function delete()
     {
@@ -120,6 +128,7 @@ trait ReadOnlyTrait
      * Throws ReadOnlyException on destroy
      * @param mixed $ids
      * @throws ReadOnlyException
+     * @deprecated Method not allowed on read-only model
      */
     public static function destroy($ids)
     {
@@ -132,6 +141,7 @@ trait ReadOnlyTrait
     /**
      * Throws ReadOnlyException on restore
      * @throws ReadOnlyException
+     * @deprecated Method not allowed on read-only model
      */
     public function restore()
     {
@@ -144,6 +154,7 @@ trait ReadOnlyTrait
     /**
      * Throws ReadOnlyException on forceDelete
      * @throws ReadOnlyException
+     * @deprecated Method not allowed on read-only model
      */
     public function forceDelete()
     {
@@ -156,6 +167,7 @@ trait ReadOnlyTrait
     /**
      * Throws ReadOnlyException on performDeleteOnModel
      * @throws ReadOnlyException
+     * @deprecated Method not allowed on read-only model
      */
     public function performDeleteOnModel()
     {
@@ -168,6 +180,7 @@ trait ReadOnlyTrait
     /**
      * Throws ReadOnlyException on push
      * @throws ReadOnlyException
+     * @deprecated Method not allowed on read-only model
      */
     public function push()
     {
@@ -181,6 +194,7 @@ trait ReadOnlyTrait
      * Throws ReadOnlyException on finishSave
      * @param array $options
      * @throws ReadOnlyException
+     * @deprecated Method not allowed on read-only model
      */
     public function finishSave(array $options)
     {
@@ -195,6 +209,7 @@ trait ReadOnlyTrait
      * @param Builder $query
      * @param array $options
      * @throws ReadOnlyException
+     * @deprecated Method not allowed on read-only model
      */
     public function performUpdate(Builder $query, array $options = []): bool
     {
@@ -208,6 +223,7 @@ trait ReadOnlyTrait
      * Throws ReadOnlyException on touch
      * @param  string|null  $attribute
      * @throws ReadOnlyException
+     * @deprecated Method not allowed on read-only model
      */
     public function touch($attribute = null)
     {
@@ -220,6 +236,7 @@ trait ReadOnlyTrait
     /**
      * Throws ReadOnlyException on insert
      * @throws ReadOnlyException
+     * @deprecated Method not allowed on read-only model
      */
     public function insert()
     {
@@ -232,6 +249,7 @@ trait ReadOnlyTrait
     /**
      * Throws ReadOnlyException on truncate
      * @throws ReadOnlyException
+     * @deprecated Method not allowed on read-only model
      */
     public function truncate()
     {
