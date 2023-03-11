@@ -1,0 +1,30 @@
+name: michaelachrisco2/ReadOnlyTraitLaravel/build
+on:
+  push:
+    branches:
+    - main
+jobs:
+  build_php_version:
+    defaults:
+      run:
+        working-directory: "~/ReadOnlyTraitLaravel"
+    runs-on: ubuntu-latest
+    container:
+      image: php:8.0.20
+    steps:
+    - uses: actions/checkout@v3.3.0
+    - run: sudo composer self-update
+    - run: composer install -n --prefer-dist --no-plugins
+    - run: "./vendor/bin/kahlan -reporter=verbose"
+  build_latest:
+    defaults:
+      run:
+        working-directory: "~/ReadOnlyTraitLaravel"
+    runs-on: ubuntu-latest
+    container:
+      image: php:latest
+    steps:
+    - uses: actions/checkout@v3.3.0
+    - run: sudo composer self-update
+    - run: composer install -n --prefer-dist --no-plugins
+    - run: "./vendor/bin/kahlan -reporter=verbose"
