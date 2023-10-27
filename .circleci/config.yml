@@ -1,15 +1,6 @@
 version: 2.1
 
 jobs:
-  build_php_version_80:
-    docker:
-      - image: cimg/php:8.0.20
-    working_directory: ~/ReadOnlyTraitLaravel
-    steps: # a set of executable commands
-      - checkout
-      - run: sudo composer self-update
-      - run: composer install -n --prefer-dist --no-plugins
-      - run: ./vendor/bin/kahlan -reporter=verbose
   build_php_version_81:
     docker:
       - image: cimg/php:8.1.14
@@ -19,9 +10,9 @@ jobs:
       - run: sudo composer self-update
       - run: composer install -n --prefer-dist --no-plugins
       - run: ./vendor/bin/kahlan -reporter=verbose
-  build_latest:
+  build_php_version_82:
     docker: 
-      - image: cimg/php:latest
+      - image: cimg/php:8.2.12
     working_directory: ~/ReadOnlyTraitLaravel
     steps: # a set of executable commands
       - checkout
@@ -32,6 +23,5 @@ workflows:
   version: 2
   build:
     jobs:
-      - build_php_version_80
       - build_php_version_81
-      - build_latest
+      - build_php_version_82
