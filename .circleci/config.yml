@@ -21,7 +21,7 @@ jobs:
       - run: ./vendor/bin/kahlan -reporter=verbose
   build_latest:
     docker: 
-      - image: circleci/php:latest
+      - image: cimg/php:latest
     working_directory: ~/ReadOnlyTraitLaravel
     steps: # a set of executable commands
       - checkout
