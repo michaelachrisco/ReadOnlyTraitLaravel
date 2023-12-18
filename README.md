@@ -1,3 +1,8 @@
+[![Latest Version on Packagist](https://img.shields.io/packagist/v/michaelachrisco/readonly.svg?style=flat-square)](https://packagist.org/packages/michaelachrisco/readonly)
+[![CircleCI](https://circleci.com/gh/michaelachrisco/ReadOnlyTraitLaravel.svg?style=shield)](https://app.circleci.com/pipelines/github/michaelachrisco/ReadOnlyTraitLaravel)
+[![Total Downloads](https://img.shields.io/packagist/dt/michaelachrisco/readonly.svg?style=flat-square)](https://packagist.org/packages/michaelachrisco/readonly)
+
+
 # Laravel 5+ Read Only Models
 The read only trait removes the ability to save, delete or modify Laravel models.
 Ideally, this would be used in addition to DB permissions to ensure users and developers cannot write to a Legacy system.
