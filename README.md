@@ -1,4 +1,5 @@
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/michaelachrisco/readonly.svg?style=flat-square)](https://packagist.org/packages/michaelachrisco/readonly)
+[![CircleCI](https://circleci.com/gh/michaelachrisco/ReadOnlyTraitLaravel.svg?style=shield)](https://app.circleci.com/pipelines/github/michaelachrisco/ReadOnlyTraitLaravel)
 
 
 # Laravel 5+ Read Only Models
