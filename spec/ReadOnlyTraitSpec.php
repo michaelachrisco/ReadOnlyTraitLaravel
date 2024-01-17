@@ -186,10 +186,12 @@ class UserReadOnlyNotActive extends MockModel
 }
 
 describe("UserReadOnlyNotActive", function () {
-    describe("::create()", function () {
-        it("expects `create()` to be toBeTruthy", function () {
-            $user = new UserReadOnlyNotActive;
-            expect($user->create([]))->toBeTruthy();
+    context("When UserReadOnlyNotActive calls unsupported method and isActive is true", function () {
+        describe("::create()", function () {
+            it("expects `create()` to be toBeTruthy", function () {
+                $user = new UserReadOnlyNotActive;
+                expect($user->create([]))->toBeTruthy();
+            });
         });
     });
 });
