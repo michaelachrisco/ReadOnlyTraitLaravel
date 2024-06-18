@@ -1,0 +1,45 @@
+name: PHP Build
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build_php_version_82:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up PHP 8.2
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: 8.2
+
+      - name: Install dependencies
+        run: |
+          sudo composer self-update
+          composer install -n --prefer-dist --no-plugins
+
+      - name: Run tests
+        run: ./vendor/bin/kahlan -reporter=verbose
+
+  build_php_version_83:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up PHP 8.3
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: 8.3
+
+      - name: Install dependencies
+        run: |
+          sudo composer self-update
+          composer install -n --prefer-dist --no-plugins
+
+      - name: Run tests
+        run: ./vendor/bin/kahlan -reporter=verbose
