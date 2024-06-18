@@ -1,6 +1,6 @@
-[![Latest Version on Packagist](https://img.shields.io/packagist/v/michaelachrisco/readonly.svg?style=flat-square)](https://packagist.org/packages/michaelachrisco/readonly)
-[![CircleCI](https://circleci.com/gh/michaelachrisco/ReadOnlyTraitLaravel.svg?style=shield)](https://app.circleci.com/pipelines/github/michaelachrisco/ReadOnlyTraitLaravel)
-[![Total Downloads](https://img.shields.io/packagist/dt/michaelachrisco/readonly.svg?style=flat-square)](https://packagist.org/packages/michaelachrisco/readonly)
+[![Total Downloads](https://img.shields.io/packagist/dt/michaelachrisco/readonly.svg)](https://packagist.org/packages/michaelachrisco/readonly)
+![build workflow](https://github.com/michaelachrisco/ReadOnlyTraitLaravel/actions/workflows/build.yml/badge.svg)
+[![Latest Version on Packagist](https://img.shields.io/packagist/v/michaelachrisco/readonly.svg)](https://packagist.org/packages/michaelachrisco/readonly)
 
 
 # Laravel 5+ Read Only Models
