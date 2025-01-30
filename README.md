@@ -16,7 +16,6 @@ composer require michaelachrisco/readonly
 ## To use:
 
 
-
 ```php
 <?php
 use Illuminate\Database\Eloquent\Model;
