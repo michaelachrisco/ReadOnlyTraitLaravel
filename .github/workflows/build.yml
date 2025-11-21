@@ -3,7 +3,7 @@ name: PHP Build
 on:
   push:
     branches:
-      - fix-ci-8.3
+      - main
 
 jobs:
   build_php_version_82:
